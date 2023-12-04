@@ -1,12 +1,16 @@
 # cuda-on-colab
 Showing how to use CUDA on google colab (colab.research.google.com)
 
+Run example in Collab: <a target="_blank" href="https://colab.research.google.com/github/evelynmitchell/cuda-on-colab/blob/master/CudaColab.ipynb">
+<img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
+</a>
+
 [ ] run on colab button
 [ ] basic c++ example
     [x] copy
-    [ ] commit
-    [ ] build
-    [ ] run
+    [x] commit
+    [x] build
+    [x] run
     [ ] profile
 
 ## src/simple.cpp
