@@ -55,6 +55,13 @@ int main(void)
 
 ```
 
+## __global__
+
+In order to run on the GPU, we need to change the program suffix from .cpp to .cu so that the nvcc compiler will be used.  We also need to add the __global__ signifier to the add function.  
+
+```
+
 # Sources
 
 [1] Nvida tutorial (https://developer.nvidia.com/blog/even-easier-introduction-cuda/)
+[2] Compilation details (https://stackoverflow.com/questions/34527420/a-simple-c-helloworld-with-cuda)
