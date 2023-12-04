@@ -57,11 +57,34 @@ int main(void)
 
 ## __global__
 
-In order to run on the GPU, we need to change the program suffix from .cpp to .cu so that the nvcc compiler will be used.  We also need to add the __global__ signifier to the add function.  
+In order to run on the GPU, we need to change the program suffix from .cpp to .cu so that the nvcc compiler will be used.[2]  We also need to add the __global__ signifier to the add function.  
 
+In addition, just adding __global__ is not enough.  We also need to add the <<<1,1>>> syntax to the call to the add function.  This is the kernel launch configuration.  The first number is the number of blocks and the second number is the number of threads per block.  The <<<1,1>>> syntax is required even if we only have one block and one thread per block.  [3]
+
+```
+/content/cuda-on-colab/src/simple_cuda.cu(26): error: a __global__ function call must be configured
+
+1 error detected in the compilation of "/content/cuda-on-colab/src/simple_cuda.cu".
+
+
+```
+
+To fix this, we need to change the function to be:
+
+```
+// CUDA Kernel function to add the elements of two arrays on the GPU
+// <<< (gridsize), (blocksize) >>>
+// <<<1,1>>> means 1 block with 1 thread
+__global__
+void <<<1,1>>> add(int n, float *x, float *y)
+{
+  for (int i = 0; i < n; i++)
+      y[i] = x[i] + y[i];
+}
 ```
 
 # Sources
 
 [1] Nvida tutorial (https://developer.nvidia.com/blog/even-easier-introduction-cuda/)
 [2] Compilation details (https://stackoverflow.com/questions/34527420/a-simple-c-helloworld-with-cuda)
+[3] More nvcc details (https://stackoverflow.com/questions/67177794/error-a-global-function-call-must-be-configured)
