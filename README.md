@@ -5,13 +5,15 @@ Run example in Collab: <a target="_blank" href="https://colab.research.google.co
 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
-[ ] run on colab button
-[ ] basic c++ example
+```
+[x] run on colab button
+[/] basic c++ example
     [x] copy
     [x] commit
     [x] build
     [x] run
     [ ] profile
+```
 
 ## src/simple.cpp
 
