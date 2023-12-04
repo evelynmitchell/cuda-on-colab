@@ -69,18 +69,13 @@ In addition, just adding __global__ is not enough.  We also need to add the <<<1
 
 ```
 
-To fix this, we need to change the function to be:
+To fix this, we need to change the function invocation to be:
 
 ```
-// CUDA Kernel function to add the elements of two arrays on the GPU
-// <<< (gridsize), (blocksize) >>>
-// <<<1,1>>> means 1 block with 1 thread
-__global__
-void <<<1,1>>> add(int n, float *x, float *y)
-{
-  for (int i = 0; i < n; i++)
-      y[i] = x[i] + y[i];
-}
+  // Run kernel on 1M elements on the GPU
+  // <<< (gridsize), (blocksize) >>>
+  // <<<1,1>>> means 1 block with 1 thread
+  add<<<1,1>>>(N, x, y);
 ```
 
 # Sources
