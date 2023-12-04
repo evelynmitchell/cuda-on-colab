@@ -1,19 +1,3 @@
-# cuda-on-colab
-Showing how to use CUDA on google colab (colab.research.google.com)
-
-[ ] run on colab button
-[ ] basic c++ example
-    [x] copy
-    [ ] commit
-    [ ] build
-    [ ] run
-    [ ] profile
-
-## src/simple.cpp
-
-This is copied from [1] and is a simple example of using CUDA to add the elements of two arrays with a million elements each.
-
-```
 #include <iostream>
 #include <math.h>
 
@@ -52,9 +36,3 @@ int main(void)
 
   return 0;
 }
-
-```
-
-# Sources
-
-[1] Nvida tutorial (https://developer.nvidia.com/blog/even-easier-introduction-cuda/)
