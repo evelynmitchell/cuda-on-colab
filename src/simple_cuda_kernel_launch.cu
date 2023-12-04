@@ -5,7 +5,7 @@
 // <<< (gridsize), (blocksize) >>>
 // <<<1,1>>> means 1 block with 1 thread
 __global__
-void <<<1,1>>> add(int n, float *x, float *y)
+void add<<<1,1>>>add(int n, float *x, float *y)
 {
   for (int i = 0; i < n; i++)
       y[i] = x[i] + y[i];
