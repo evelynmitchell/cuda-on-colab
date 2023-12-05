@@ -12,7 +12,9 @@ Run example in Collab: <a target="_blank" href="https://colab.research.google.co
     [x] commit
     [x] build
     [x] run
-    [ ] profile
+    [x] profile
+    [ ] multi-threaded
+    [ ] multi-gpu
 ```
 
 ## src/simple.cpp
