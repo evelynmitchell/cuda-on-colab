@@ -113,8 +113,41 @@ No kernels were profiled.
                     0.00%     255ns         1     255ns     255ns     255ns  cuDeviceGetUuid
 ```
 
+## Memory allocation
+
+CUDA programs have a global shared memory alloation between the CPU and GPU. "Unified Memory lowers the bar of entry to parallel programming on the CUDA platform, by making device memory management an optimization, rather than a requirement."[4]
+
+The memory is allocated using cudaMallocManaged.  This is a CUDA API function that allocates memory that is accessible from the host and the device.  The memory is allocated on the device and the host can access it.  The device can access it without copying it from the host.  The memory is freed using cudaFree.
+
+```
+  float *x, *y;
+  cudaMallocManaged(&x, N*sizeof(float));
+  cudaMallocManaged(&y, N*sizeof(float));
+
+...
+  cudaFree(x);
+  cudaFree(y);
+
+```
+
+The example program is simple_cuda_memory_alloc.cu
+
+The compliation with nvcc and profiling with nvprof is shown in the notebook.
+
+```
+==2424== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+      48  170.67KB  4.0000KB  0.9961MB  8.000000MB  843.8660us  Host To Device
+      24  170.67KB  4.0000KB  0.9961MB  4.000000MB  357.2770us  Device To Host
+      12         -         -         -           -  4.243755ms  Gpu page fault groups
+Total CPU Page faults: 36
+```
+
+
 # Sources
 
 [1] Nvida tutorial (https://developer.nvidia.com/blog/even-easier-introduction-cuda/)
 [2] Compilation details (https://stackoverflow.com/questions/34527420/a-simple-c-helloworld-with-cuda)
 [3] More nvcc details (https://stackoverflow.com/questions/67177794/error-a-global-function-call-must-be-configured)
+[4] (https://developer.nvidia.com/blog/unified-memory-in-cuda-6/)
