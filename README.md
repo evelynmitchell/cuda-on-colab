@@ -13,6 +13,7 @@ Run example in Collab: <a target="_blank" href="https://colab.research.google.co
     [x] build
     [x] run
     [x] profile
+    [x] memory allocation
     [ ] multi-threaded
     [ ] multi-gpu
 ```
