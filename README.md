@@ -144,6 +144,18 @@ Device "Tesla V100-SXM2-16GB (0)"
 Total CPU Page faults: 36
 ```
 
+## Understanding checkpoint
+
+What is the compiler used to compile CUDA programs?
+
+What is the filename extension for CUDA source files?
+
+What is the command used to profile CUDA programs?
+
+How is memory allocated in CUDA programs? How does this differ from C++ programs?
+
+
+
 
 # Sources
 
