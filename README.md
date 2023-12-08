@@ -86,6 +86,33 @@ To fix this, we need to change the function invocation to be:
   add<<<1,1>>>(N, x, y);
 ```
 
+## Profiling
+
+nvprof is a command line profiler that comes with the CUDA toolkit.  It can be used to profile the execution of the program.  To use it, we need to add the following to run the program:
+
+```
+nvprof ./simple_cuda_kernel
+``` 
+This produces an output similar to:
+```
+==764== NVPROF is profiling process 764, command: ./simple_cuda_kernal_launch
+Max error: 1
+==764== Profiling application: ./simple_cuda_kernal_launch
+==764== Warning: 1 records have invalid timestamps due to insufficient device buffer space. You can configure the buffer space using the option --device-buffer-size.
+==764== Profiling result:
+No kernels were profiled.
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+      API calls:   98.68%  102.66ms         1  102.66ms  102.66ms  102.66ms  cudaLaunchKernel
+                    1.18%  1.2271ms         1  1.2271ms  1.2271ms  1.2271ms  cuDeviceGetPCIBusId
+                    0.11%  112.96us       101  1.1180us     149ns  48.383us  cuDeviceGetAttribute
+                    0.02%  25.821us         1  25.821us  25.821us  25.821us  cuDeviceGetName
+                    0.00%  1.7480us         3     582ns     207ns  1.2670us  cuDeviceGetCount
+                    0.00%     661ns         2     330ns     176ns     485ns  cuDeviceGet
+                    0.00%     347ns         1     347ns     347ns     347ns  cuModuleGetLoadingMode
+                    0.00%     344ns         1     344ns     344ns     344ns  cuDeviceTotalMem
+                    0.00%     255ns         1     255ns     255ns     255ns  cuDeviceGetUuid
+```
+
 # Sources
 
 [1] Nvida tutorial (https://developer.nvidia.com/blog/even-easier-introduction-cuda/)
