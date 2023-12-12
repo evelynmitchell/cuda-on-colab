@@ -1,7 +1,7 @@
 # cuda-on-colab
 Showing how to use CUDA on google colab (colab.research.google.com)
 
-Run example in Collab: <a target="_blank" href="https://colab.research.google.com/github/evelynmitchell/cuda-on-colab/blob/master/CudaColab.ipynb">
+Run example in Colab: <a target="_blank" href="https://colab.research.google.com/github/evelynmitchell/cuda-on-colab/blob/master/CudaColab.ipynb">
 <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/>
 </a>
 
@@ -155,7 +155,15 @@ What is the command used to profile CUDA programs?
 
 How is memory allocated in CUDA programs? How does this differ from C++ programs?
 
+## nvperf
 
+## S-LoRA
+
+S-LoRA is a system with custom CUDA kernals for running thousands of LoRAs with the same base model on a system. It uses CPU memory for storing the LoRAs (Low Rank Adapters), which are loaded as needed into the GPU threads. The base model is stored in the GPU memory and the result of running the base model attention, is combined with the result of the row-wise LoRA and column-wise LoRA in one step.
+
+The paper also discusses a non-fragmenting memory management method, which relies on the common dimension between inputs, base models and LoRAs, to allow for row-wise loads and unloads of data as needed.
+
+[5] S-LoRA: Serving Thousands of Concurrent LoRA Adapters is also worth reading because of the discussion of scheduling and request eviction in order to be able to accomplish user-level Service Level Agreements (SLAs).
 
 
 # Sources
@@ -164,3 +172,4 @@ How is memory allocated in CUDA programs? How does this differ from C++ programs
 [2] Compilation details (https://stackoverflow.com/questions/34527420/a-simple-c-helloworld-with-cuda)
 [3] More nvcc details (https://stackoverflow.com/questions/67177794/error-a-global-function-call-must-be-configured)
 [4] (https://developer.nvidia.com/blog/unified-memory-in-cuda-6/)
+[5] S-LoRA: Serving Thousands of Concurrent LoRA Adapters (https://arxiv.org/abs/2311.03285)
