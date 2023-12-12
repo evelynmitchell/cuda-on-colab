@@ -164,6 +164,7 @@ S-LoRA is a system with custom CUDA kernals for running thousands of LoRAs with 
 The paper also discusses a non-fragmenting memory management method, which relies on the common dimension between inputs, base models and LoRAs, to allow for row-wise loads and unloads of data as needed.
 
 [5] S-LoRA: Serving Thousands of Concurrent LoRA Adapters is also worth reading because of the discussion of scheduling and request eviction in order to be able to accomplish user-level Service Level Agreements (SLAs).
+Code at (https://github.com/S-LoRA/S-LoRA)
 
 
 # Sources
