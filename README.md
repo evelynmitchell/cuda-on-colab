@@ -155,6 +155,16 @@ What is the command used to profile CUDA programs?
 
 How is memory allocated in CUDA programs? How does this differ from C++ programs?
 
+## Debugging libcuda.so not found
+
+If you are compiling some cuda tools from source on colab, you may run into an error like:
+
+```
+libcuda.so not found
+```
+
+To fix this, as shown in the colab notebook, we follow the instructions from [6].
+
 ## nvperf
 
 ## S-LoRA
@@ -174,3 +184,4 @@ Code at (https://github.com/S-LoRA/S-LoRA)
 [3] More nvcc details (https://stackoverflow.com/questions/67177794/error-a-global-function-call-must-be-configured)
 [4] (https://developer.nvidia.com/blog/unified-memory-in-cuda-6/)
 [5] S-LoRA: Serving Thousands of Concurrent LoRA Adapters (https://arxiv.org/abs/2311.03285)
+[6] (https://github.com/pytorch/pytorch/issues/107960#issuecomment-1709589190)
