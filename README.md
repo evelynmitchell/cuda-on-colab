@@ -167,6 +167,10 @@ To fix this, as shown in the colab notebook, we follow the instructions from [6]
 
 ## nvperf
 
+## Numba CUDA
+
+[7] (https://numba.readthedocs.io/en/stable/cuda/index.html)
+
 ## S-LoRA
 
 S-LoRA is a system with custom CUDA kernals for running thousands of LoRAs with the same base model on a system. It uses CPU memory for storing the LoRAs (Low Rank Adapters), which are loaded as needed into the GPU threads. The base model is stored in the GPU memory and the result of running the base model attention, is combined with the result of the row-wise LoRA and column-wise LoRA in one step.
@@ -185,3 +189,4 @@ Code at (https://github.com/S-LoRA/S-LoRA)
 [4] (https://developer.nvidia.com/blog/unified-memory-in-cuda-6/)
 [5] S-LoRA: Serving Thousands of Concurrent LoRA Adapters (https://arxiv.org/abs/2311.03285)
 [6] (https://github.com/pytorch/pytorch/issues/107960#issuecomment-1709589190)
+[7] Numba CUDA (https://numba.readthedocs.io/en/stable/cuda/index.html)
