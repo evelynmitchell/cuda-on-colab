@@ -171,6 +171,11 @@ To fix this, as shown in the colab notebook, we follow the instructions from [6]
 
 [7] (https://numba.readthedocs.io/en/stable/cuda/index.html)
 
+
+## Nvida CUDA Programming Guide
+
+[8] (https://docs.nvidia.com/cuda/cuda-c-programming-guide/)
+
 ## S-LoRA
 
 S-LoRA is a system with custom CUDA kernals for running thousands of LoRAs with the same base model on a system. It uses CPU memory for storing the LoRAs (Low Rank Adapters), which are loaded as needed into the GPU threads. The base model is stored in the GPU memory and the result of running the base model attention, is combined with the result of the row-wise LoRA and column-wise LoRA in one step.
