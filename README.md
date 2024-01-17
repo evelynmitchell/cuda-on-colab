@@ -167,6 +167,7 @@ To fix this, as shown in the colab notebook, we follow the instructions from [6]
 
 ## nvperf
 
+
 ## Numba CUDA
 
 [7] (https://numba.readthedocs.io/en/stable/cuda/index.html)
@@ -189,9 +190,15 @@ Code at (https://github.com/S-LoRA/S-LoRA)
 # Sources
 
 [1] Nvida tutorial (https://developer.nvidia.com/blog/even-easier-introduction-cuda/)
+
 [2] Compilation details (https://stackoverflow.com/questions/34527420/a-simple-c-helloworld-with-cuda)
+
 [3] More nvcc details (https://stackoverflow.com/questions/67177794/error-a-global-function-call-must-be-configured)
+
 [4] (https://developer.nvidia.com/blog/unified-memory-in-cuda-6/)
+
 [5] S-LoRA: Serving Thousands of Concurrent LoRA Adapters (https://arxiv.org/abs/2311.03285)
+
 [6] (https://github.com/pytorch/pytorch/issues/107960#issuecomment-1709589190)
+
 [7] Numba CUDA (https://numba.readthedocs.io/en/stable/cuda/index.html)
