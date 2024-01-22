@@ -165,6 +165,23 @@ libcuda.so not found
 
 To fix this, as shown in the colab notebook, we follow the instructions from [6].
 
+## Using Triton, OpenAI's GPU compiler from python
+
+[x] Install Triton in colab
+```
+!git clone https://github.com/openai/triton.git
+```
+Triton should already be installed in colab, but an older version.  We need to upgrade it.
+```
+!pip install triton
+!pip install triton --upgrade
+```
+[ ] Run Triton tutorials
+Then run the tutorials from the [triton directory](https://github.com/openai/triton/tree/main/python/tutorials)
+```
+!python /content/triton/python/tutorials/01-vector-add.py
+```
+
 ## nvperf
 
 
