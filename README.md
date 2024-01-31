@@ -16,6 +16,8 @@ Run example in Colab: <a target="_blank" href="https://colab.research.google.com
     [x] memory allocation
     [ ] multi-threaded
     [ ] multi-gpu
+[ ] basic python + cuda example
+    [ ] 
 ```
 
 ## src/simple.cpp
