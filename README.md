@@ -186,6 +186,42 @@ Then run the tutorials from the [triton directory](https://github.com/openai/tri
 
 ## nvperf
 
+nvperf is a tool for profiling the performance of CUDA programs.  It is part of the NVIDIA HPC SDK.  It is installed by default in colab.  It is a command line tool that can be used to profile the performance of CUDA programs.  
+
+The profiling output will look like this:
+
+```
+!nvprof /tmp/simple_cuda_memory_alloc
+```
+
+```
+==968== NVPROF is profiling process 968, command: /tmp/simple_cuda_memory_alloc
+Max error: 0
+==968== Profiling application: /tmp/simple_cuda_memory_alloc
+==968== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:  100.00%  100.03ms         1  100.03ms  100.03ms  100.03ms  add(int, float*, float*)
+      API calls:   61.56%  161.55ms         2  80.777ms  56.205us  161.50ms  cudaMallocManaged
+                   38.12%  100.04ms         1  100.04ms  100.04ms  100.04ms  cudaDeviceSynchronize
+                    0.18%  462.05us         2  231.02us  228.77us  233.27us  cudaFree
+                    0.08%  197.51us         1  197.51us  197.51us  197.51us  cudaLaunchKernel
+                    0.05%  133.89us       114  1.1740us     134ns  51.337us  cuDeviceGetAttribute
+                    0.01%  14.762us         1  14.762us  14.762us  14.762us  cuDeviceGetName
+                    0.00%  5.3400us         1  5.3400us  5.3400us  5.3400us  cuDeviceTotalMem
+                    0.00%  5.1380us         1  5.1380us  5.1380us  5.1380us  cuDeviceGetPCIBusId
+                    0.00%  1.6230us         3     541ns     160ns  1.1080us  cuDeviceGetCount
+                    0.00%  1.2110us         2     605ns     223ns     988ns  cuDeviceGet
+                    0.00%     355ns         1     355ns     355ns     355ns  cuModuleGetLoadingMode
+                    0.00%     226ns         1     226ns     226ns     226ns  cuDeviceGetUuid
+
+==968== Unified Memory profiling result:
+Device "Tesla V100-SXM2-16GB (0)"
+   Count  Avg Size  Min Size  Max Size  Total Size  Total Time  Name
+      48  170.67KB  4.0000KB  0.9961MB  8.000000MB  837.4650us  Host To Device
+      24  170.67KB  4.0000KB  0.9961MB  4.000000MB  356.8290us  Device To Host
+      12         -         -         -           -  3.111407ms  Gpu page fault groups
+Total CPU Page faults: 36
+```
 
 ## Numba CUDA
 
