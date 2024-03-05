@@ -241,6 +241,9 @@ The paper also discusses a non-fragmenting memory management method, which relie
 [5] S-LoRA: Serving Thousands of Concurrent LoRA Adapters is also worth reading because of the discussion of scheduling and request eviction in order to be able to accomplish user-level Service Level Agreements (SLAs).
 Code at (https://github.com/S-LoRA/S-LoRA)
 
+# Changelog
+
+2024-04-04 added gh actions Contributor license agreement
 
 # Sources
 
@@ -257,3 +260,4 @@ Code at (https://github.com/S-LoRA/S-LoRA)
 [6] (https://github.com/pytorch/pytorch/issues/107960#issuecomment-1709589190)
 
 [7] Numba CUDA (https://numba.readthedocs.io/en/stable/cuda/index.html)
+
